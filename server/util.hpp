@@ -1,0 +1,6 @@
+#define HARDWARE_TYPE MD_MAX72XX::FC16_HW
+
+#define MAX_DEVICES 4
+#define CS_PIN D8
+
+#define SERVER_PORT 8000
