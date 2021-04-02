@@ -1,4 +1,5 @@
-# LEDuino: An Arduino Based, IOT LED Sign
+# LEDuino
+An Arduino Based, IOT LED Sign
 
 ## Build-Instructions
 
