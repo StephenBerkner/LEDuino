@@ -1,37 +1,20 @@
-## Welcome to GitHub Pages
+# LEDuino
+An Arduino Based, IOT LED Sign
 
-You can use the [editor on GitHub](https://github.com/StephenBerkner/LEDuino/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+## Build-Instructions
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+You must manually create `server/credentials.hpp` with the following contents:
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```c++
+#define MY_SSID         "YOUR_SSID"
+#define MY_PASSWORD     "YOUR_PASSWORD"
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+Replace `YOUR_SSID` and `YOUR_PASSWORD` with the name and password of your WiFi network.
 
-### Jekyll Themes
+**NEVER SHARE YOUR NETWORK CREDENTIALS WITH ANYONE!**
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/StephenBerkner/LEDuino/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+- You should under **no cirumstances** ever do any of the following:
+  - Publish your credentials file to *any* repository
+    - `server/credentials.hpp` is included in `.gitignore` for this reason specifically
+  - Send anybody your credentials file or your WiFi credentials in plain text
