@@ -2,3 +2,38 @@
 
 # server excludes
 server/credentials.hpp
+
+# kicad excludes
+# netlists
+pcb/leduino/*.net
+
+# reports
+pcb/leduino/*.rpt
+
+# gerber files
+pcb/leduino/*.gbr
+
+# drill files
+pcb/leduino/*.drl
+
+# CPL data from pcb
+pcb/leduino/*.pos
+
+# BOM plugin output
+pcb/leduino/*.csv.tmp
+pcb/leduino/*.csv
+pcb/leduino/*.xml
+
+# autosave
+pcb/leduino/_autosave-*
+
+# backup data
+pcb/leduino/*.bak
+pcb/leduino/*.bck
+pcb/leduino/*.kicad_pcb-bak
+pcb/leduino/*.sch-bak
+_saved_*
+**/*-backups/
+
+# footprint info cache
+pcb/leduino/fp-info-cache
