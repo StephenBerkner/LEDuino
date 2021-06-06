@@ -44,29 +44,30 @@ void loop() {
 
   WiFiClient client = server.available();
 
-  if (client){
-    Serial.println("Client Connected");
-    while (client.connected() || client.available()){
-
-      if (client.available()){
-        
-        // Display string sent from client
-        String toDisplay = client.readString();
-        Serial.print("Received: ");
-        Serial.println(toDisplay);
-        display.displayText(toDisplay.c_str(), PA_LEFT,  100, 0, PA_SCROLL_LEFT, PA_SCROLL_LEFT);
-
-        while (!display.displayAnimate()){
-          // Necessary to avoid a soft WDT reset
-          delay(1);
-        }
-        
-        display.displayReset();
-      }
-    }
-
-    client.stop();
-    Serial.println("Client Disconnected");
+  if (!client){
+    return;
   }
+    Serial.println("Client Connected");
+    while (!client.available()){
+      delay(1);
+    }
+    
+    // Display string sent from client
+    String toDisplay = client.readStringUntil('\n');
 
+    //For debugging
+    Serial.print("Received: ");
+    Serial.println(toDisplay);
+    
+    //Display text scrolling to left
+    display.displayText(toDisplay.c_str(), PA_LEFT,  100, 100, PA_SCROLL_LEFT, PA_SCROLL_LEFT);
+    while (!display.displayAnimate()){
+      // Necessary to avoid a soft WDT reset
+      delay(1);
+    }
+    
+    display.displayReset();
+    client.flush();
+
+  
 }
